@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Контактные данные и заказ</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+
+    .hidden-field {
+      display: none;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .header {
+      height: 100%;
+      padding-bottom: 100px;
+    }
+  </style>
+</head>
+
+<header class="header">
+  <div class="header_container container">
+    <a href="../index.html" class="header_logo">
+      <img class="logo_item" src="../img/logo/Logo.svg" alt="logo">
+  </a>
+    <nav class="header_menu">
+      <ul class="menu_list">
+        <li class="menu_item"><a class="menu_link" href="./features.html" target="_self">Features</a></li>
+        <li class="menu_item"><a class="menu_link" href="./DOM_JS.html" target="_self">Паспорт DOM_JS</a></li>
+        <li class="menu_item"><a class="menu_link activeNavElem" href="./form.html" target="_self">Форма</a></li>
+        <li class="menu_item"><a class="menu_link" href="./task.html" target="_self">Задача</a></li>
+        <li class="menu_item"><a class="menu_link" href="./table.html" target="_self">Таблица</a></li>
+        <li class="menu_item"><a class="menu_link" href="http://www.hse.ru" target="_blank">Ссылка на внешний сайт</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header_btn">
+      <a href="#" class="header_btn-item">Login</a>
+    </div>
+    <a href=""></a>
+  </div>
+  <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyT8-vrzKNbX3Yk-aC6wfYLz2099wY-OB4F52AsNiFDXsk7Oixh21PKyuNK-q2bO9y6mw/exec" method="POST">
+    <label for="surname">Фамилия:</label>
+    <input value="surname" type="text" id="surname" name="surname" required>
+
+    <label for="firstname">Имя:</label>
+    <input value="firstname" type="text" id="firstname" name="firstname" required>
+
+    <label for="group">Группа:</label>
+    <input value="group" type="text" id="group" name="group" required>
+
+    <label for="phone">Мобильный телефон:</label>
+    <input value="71112223311" type="tel" id="phone" name="phone" required pattern="\+?\d{10,15}" placeholder="+71234567890">
+
+    <label for="email">Электронная почта:</label>
+    <input value="test@mail.ru" type="email" id="email" name="email" required>
+
+    <label for="sendDate">Дата отправки сообщения:</label>
+    <input type="date" id="sendDate" name="sendDate" value="1111-11-11" required>
+
+    <button type="submit" class="submit-btn">Отправить</button>
+  </form>
+
+  <h2>Форма заказа товаров</h2>
+  <form id="orderForm" action="https://example.com/order" method="post" target="_blank">
+    <label for="productName">Название товара:</label>
+    <input type="text" id="productName" name="productName" value="Гаджет XYZ" required>
+
+    <label for="quantity">Количество:</label>
+    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+
+    <label>Способ доставки:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="deliveryMethod" value="courier" checked> Курьер</label>
+      
+      <label><input type="radio" name="deliveryMethod" value="pickup"> Самовывоз</label>
+    </div>
+
+    <label>Дополнительно:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="additionalOptions" value="giftWrap"> Подарочная упаковка</label>
+      <label><input type="checkbox" name="additionalOptions" value="warranty" checked> Дополнительная гарантия</label>
+    </div>
+
+    <label for="password">Пароль от личного кабинета:</label>
+    <input value="123" type="password" id="password" name="password" required>
+
+    <input type="hidden" name="userId" value="12345">
+
+    <label for="orderDate">Дата заказа:</label>
+    <input type="date" id="orderDate" name="orderDate" value="1111-11-11" required>
+
+    <button type="submit" class="submit-btn">Оформить заказ</button>
+  </form>
+</header>
+
+<script>
+
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    var phoneInput = document.getElementById('phone');
+    var phonePattern = /^\+?\d{10,15}$/;
+    if (!phonePattern.test(phoneInput.value)) {
+      alert('Пожалуйста, введите корректный номер телефона.');
+      event.preventDefault();
+    }
+  });
+
+  document.getElementById('orderForm').addEventListener('submit', function (event) {
+    alert('Ваш заказ оформлен!');
+  });
+</script>
+</body>
+
+</html>

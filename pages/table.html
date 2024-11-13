@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./table.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header_container container">
+        <a href="../index.html" class="header_logo">
+          <img class="logo_item" src="../img/logo/Logo.svg" alt="logo">
+        </a>
+        <nav class="header_menu">
+          <ul class="menu_list">
+            <li class="menu_item"><a class="menu_link" href="./features.html" target="_self">Features</a></li>
+            <li class="menu_item"><a class="menu_link" href="./DOM_JS.html" target="_self">Паспорт DOM_JS</a></li>
+            <li class="menu_item"><a class="menu_link" href="./form.html" target="_self">Форма</a></li>
+            <li class="menu_item"><a class="menu_link" href="./task.html" target="_self">Задача</a></li>
+            <li class="menu_item"><a class="menu_link activeNavElem" href="./table.html" target="_self">Таблица</a></li>
+            <li class="menu_item"><a class="menu_link" href="http://www.hse.ru" target="_blank">Ссылка на внешний
+                сайт</a></li>
+          </ul>
+        </nav>
+        <div class="header_btn">
+          <a href="#" class="header_btn-item">Login</a>
+        </div>
+      </div>
+      <main>
+        <table>
+          <caption>Список IT проектов с изображениями</caption>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Логотип</th>
+              <th>Название проекта</th>
+              <th>Клиент</th>
+              <th>Бюджет ($)</th>
+              <th>Дата начала</th>
+              <th>Дата окончания</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="https://via.placeholder.com/50/4CAF50/FFFFFF?text=G" alt="GlobalTech Logo" class="logo">
+              </td>
+              <td>Cloud Management System</td>
+              <td>GlobalTech</td>
+              <td>250,000</td>
+              <td>10.01.2023</td>
+              <td>25.06.2023</td>
+              <td class="status-completed">Завершен</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="https://via.placeholder.com/50/2196F3/FFFFFF?text=I" alt="Innovate Solutions Logo"
+                  class="logo"></td>
+              <td>AI Chatbot Development</td>
+              <td>Innovate Solutions</td>
+              <td>180,000</td>
+              <td>15.03.2023</td>
+              <td>--</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><img src="https://via.placeholder.com/50/FF9800/FFFFFF?text=F" alt="FinanceCorp Logo" class="logo">
+              </td>
+              <td>Mobile Banking App</td>
+              <td>FinanceCorp</td>
+              <td>300,000</td>
+              <td>01.02.2023</td>
+              <td>30.09.2023</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><img src="https://via.placeholder.com/50/9C27B0/FFFFFF?text=D" alt="DataMinds Logo" class="logo"></td>
+              <td>Data Analytics Platform</td>
+              <td>DataMinds</td>
+              <td>220,000</td>
+              <td>20.04.2023</td>
+              <td>--</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><img src="https://via.placeholder.com/50/FF5722/FFFFFF?text=S" alt="ShopEase Logo" class="logo"></td>
+              <td>eCommerce Website</td>
+              <td>ShopEase</td>
+              <td>150,000</td>
+              <td>05.05.2023</td>
+              <td>--</td>
+              <td class="status-in-progress">В процессе</td>
+              
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><img src="https://via.placeholder.com/50/795548/FFFFFF?text=B" alt="BusinessFlow Logo" class="logo">
+              </td>
+              <td>CRM System Upgrade</td>
+              <td>BusinessFlow</td>
+              <td>100,000</td>
+              <td>12.01.2023</td>
+              <td>28.02.2023</td>
+              <td class="status-completed">Завершен</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><img src="https://via.placeholder.com/50/607D8B/FFFFFF?text=S" alt="SecureNet Logo" class="logo"></td>
+              <td>Cybersecurity Audit</td>
+              <td>SecureNet</td>
+              <td>80,000</td>
+              <td>01.06.2023</td>
+              <td>--</td>
+              <td class="status-planned">Запланирован</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><a href="https://via.placeholder.com/50/00BCD4/FFFFFF?text=C" target="_blank"><img src="https://via.placeholder.com/50/00BCD4/FFFFFF?text=C" alt="CryptoSolutions Logo"
+                  class="logo"></a></td>
+              <td>Blockchain Integration</td>
+              <td>CryptoSolutions</td>
+              <td>270,000</td>
+              <td>18.02.2023</td>
+              <td>30.08.2023</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><img src="https://via.placeholder.com/50/E91E63/FFFFFF?text=V" alt="VisionTech Logo" class="logo">
+              </td>
+              <td>Virtual Reality App</td>
+              <td>VisionTech</td>
+              <td>350,000</td>
+              <td>25.03.2023</td>
+              <td>--</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><img src="https://via.placeholder.com/50/3F51B5/FFFFFF?text=C" alt="ConnectedHomes Logo" class="logo">
+              </td>
+              <td>IoT Device Management</td>
+              <td>ConnectedHomes</td>
+              <td>200,000</td>
+              <td>10.04.2023</td>
+              <td>--</td>
+              <td class="status-in-progress">В процессе</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </header>
+  </div>
+  <script src="script.js"></script>
+</body>
+<style>
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+
+  caption {
+    caption-side: top;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+  }
+
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 12px 15px;
+    text-align: center;
+    color: white;
+  }
+
+  th {
+    background-color: #5584ff;
+    color: #fff;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .status-completed {
+    color: green;
+    font-weight: bold;
+  }
+
+  .status-in-progress {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .status-planned {
+    color: blue;
+    font-weight: bold;
+  }
+</style>
+
+</html>

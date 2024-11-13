@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Задача</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .title {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .calculator {
+      background-color: #fff;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .calculator input[type="number"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .calculator button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .calculator button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      background-color: #e7f3fe;
+      border-left: 6px solid #2196F3;
+      padding: 15px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .result strong {
+      font-size: 18px;
+    }
+
+    .error {
+      background-color: #fdecea;
+      border-left: 6px solid #f44336;
+      padding: 15px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .error strong {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_container container">
+      <a href="../index.html" class="header_logo">
+        <img class="logo_item" src="../img/logo/Logo.svg" alt="logo">
+      </a>
+      <nav class="header_menu">
+        <ul class="menu_list">
+          <li class="menu_item"><a class="menu_link" href="./features.html" target="_self">Features</a></li>
+          <li class="menu_item"><a class="menu_link" href="./DOM_JS.html" target="_self">Паспорт DOM_JS</a></li>
+          <li class="menu_item"><a class="menu_link" href="./form.html" target="_self">Форма</a></li>
+          <li class="menu_item"><a class="menu_link activeNavElem" href="./task.html" target="_self">Задача</a></li>
+          <li class="menu_item"><a class="menu_link" href="./table.html" target="_self">Таблица</a></li>
+          <li class="menu_item"><a class="menu_link" href="http://www.hse.ru" target="_blank">Ссылка на внешний сайт</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header_btn">
+        <a href="#" class="header_btn-item">Login</a>
+      </div>
+      <a href=""></a>
+    </div>
+
+
+    <div class="calculator">
+      <h1 class="title">Z = 1/(XY)</h1>
+      <form id="calcForm">
+        <label for="xValue">Введите значение X:</label>
+        <input type="number" id="xValue" name="xValue" step="any" required>
+
+        <label for="yValue">Введите значение Y:</label>
+        <input type="number" id="yValue" name="yValue" step="any" required>
+
+        <button type="submit">Вычислить Z</button>
+      </form>
+
+      <div class="result" id="result">
+        <strong>Результат:</strong>
+        <p>Z = <span id="zValue"></span></p>
+      </div>
+
+      <div class="error" id="error">
+        <strong>Ошибка:</strong>
+        <p id="errorMessage"></p>
+      </div>
+    </div>
+  </header>
+  <script>
+    const calcForm = document.getElementById('calcForm');
+    const resultDiv = document.getElementById('result');
+    const errorDiv = document.getElementById('error');
+    const zValueSpan = document.getElementById('zValue');
+    const errorMessage = document.getElementById('errorMessage');
+
+    calcForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const x = parseFloat(document.getElementById('xValue').value);
+      const y = parseFloat(document.getElementById('yValue').value);
+
+      if (isNaN(x) || isNaN(y)) {
+        showError('Пожалуйста, введите числовые значения для X и Y.');
+        return;
+      }
+
+      if (x === 0 || y === 0) {
+        showError('Значения X и Y не должны быть равны нулю (деление на ноль).');
+        return;
+      }
+
+      const z = 1 / (x * y);
+
+      zValueSpan.textContent = z;
+      errorDiv.style.display = 'none';
+      resultDiv.style.display = 'block';
+    });
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      resultDiv.
+
+        style.display = 'none';
+      errorDiv.style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>

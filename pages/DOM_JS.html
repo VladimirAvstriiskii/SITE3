@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Паспорт</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .passport-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .passport-section {
+      margin-bottom: 20px;
+    }
+
+    .passport-section h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .passport-section p {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .passport-photo {
+      float: right;
+      width: 150px;
+      height: 200px;
+      background-color: #ddd;
+      margin-left: 20px;
+      text-align: center;
+      line-height: 200px;
+      color: #888;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .translate-button {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .translate-button:hover {
+      background-color: #45a049;
+    }
+
+    .latin-text {
+      display: none;
+    }
+
+    header,
+    nav,
+    footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #FF7518;
+    }
+
+    nav a.active {
+      font-weight: bold;
+    }
+
+    .passport-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .passport-container img {
+      width: 600px;
+      height: auto;
+    }
+
+    .text {
+      position: absolute;
+      color: black;
+      font-size: 1.2em;
+    }
+
+    #issued {
+      top: 100px;
+      left: 170px;
+    }
+
+    #surname {
+      top: 488px;
+      left: 350px;
+    }
+
+    #name {
+      top: 550px;
+      left: 340px;
+    }
+
+    #father {
+      top: 585px;
+      left: 325px;
+    }
+
+    #gender {
+      top: 616px;
+      left: 254px;
+    }
+
+    #birthplace {
+      top: 645px;
+      left: 340px;
+    }
+
+    #photo {
+      position: absolute;
+      top: 554px;
+      left: 45px;
+      width: 168px;
+      height: auto;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_container container">
+      <a href="../index.html" class="header_logo">
+        <img class="logo_item" src="../img/logo/Logo.svg" alt="logo">
+      </a>
+      <nav class="header_menu">
+        <ul class="menu_list">
+          <li class="menu_item"><a class="menu_link" href="./features.html" target="_self">Features</a></li>
+          <li class="menu_item"><a class="menu_link activeNavElem" href="./DOM_JS.html" target="_self">Паспорт
+              DOM_JS</a></li>
+          <li class="menu_item"><a class="menu_link" href="./form.html" target="_self">Форма</a></li>
+          <li class="menu_item"><a class="menu_link" href="./task.html" target="_self">Задача</a></li>
+          <li class="menu_item"><a class="menu_link" href="./table.html" target="_self">Таблица</a></li>
+          <li class="menu_item"><a class="menu_link" href="http://www.hse.ru" target="_blank">Ссылка на внешний сайт</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header_btn">
+        <a href="#" class="header_btn-item">Login</a>
+      </div>
+    </div>
+    <main>
+      <div class="passport-container">
+        <img src="../img/passport.jpg" alt="Паспорт РФ">
+
+        <img id="photo" src="../img/слон.jpeg" alt="Фото Владимир" title="Это фотография Владимира">
+
+        <div class="text" id="issued">ГУ МВД ПО Г. МОСКВЕ</div>
+        <div class="text" id="surname">Австрийский</div>
+        <div class="text" id="name">Владимир</div>
+        <div class="text" id="father">Александрович</div>
+        <div class="text" id="gender">Муж</div>
+        <div class="text" id="birthplace">Москва</div>
+      </div>
+
+      <div class="button-container">
+        <button id="translateButton">Поменять</button>
+      </div>
+    </main>
+  </header>
+  <script>
+    document.getElementById('translateButton').addEventListener('click',() => {
+      const issuedText = document.getElementById('issued');
+      const surnameText = document.getElementById('surname');
+      const nameText = document.getElementById('name');
+      const patronymicText = document.getElementById('father');
+      const genderText = document.getElementById('gender');
+      const birthplaceText = document.getElementById('birthplace');
+
+      if (issuedText.innerText === 'ГУ МВД ПО Г. МОСКВЕ') {
+        issuedText.innerText = 'MOSCOW GU MVD';
+        surnameText.innerText = 'Avstriisky';
+        nameText.innerText = 'Vladimir';
+        patronymicText.innerText = 'Alexandrovich';
+        genderText.innerText = 'Male';
+        birthplaceText.innerText = 'Moscow';
+      } else {
+        issuedText.innerText = 'ГУ МВД ПО Г. МОСКВЕ';
+        surnameText.innerText = 'Австрийский';
+        nameText.innerText = 'Владимир';
+        patronymicText.innerText = 'Александрович';
+        genderText.innerText = 'Муж';
+        birthplaceText.innerText = 'Москва';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
+
